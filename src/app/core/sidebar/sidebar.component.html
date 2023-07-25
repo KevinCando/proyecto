@@ -1,0 +1,59 @@
+<!-- <div class="d-flex flex-column flex-shrink-0 p-3 clr-pclear" style="width: 280px; min-height: 582px;" >
+    <ul>
+        <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#home-collapse" aria-expanded="false"> " Home "
+            </button>
+            <div class="collapse" id="home-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li>
+                        <a href="#" class="link-dark rounded">aaaa</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <a href="#" class="nav-link txt-purple" aria-current="page">
+                <i class="fa fa-suitcase"></i>&nbsp;&nbsp;&nbsp;Información General
+            </a>
+        </li>
+        <li *ngIf="admin == 1">
+            <a href="#" class="nav-link txt-purple">
+                <i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;Área de trabajo social
+            </a>
+        </li>
+        <li *ngIf="admin == 2">
+            <a href="#" class="nav-link txt-purple">
+                <i class="fa fa-users"></i>&nbsp;&nbsp;&nbsp;Área psicológica
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link txt-purple">
+                <i class="fa fa-file"></i>&nbsp;&nbsp;&nbsp;Área legal
+            </a>
+        </li>
+    </ul>
+</div>  -->
+
+<!-- <mat-toolbar color="pimary">
+    <mat-toolbar-row>
+        <h4>Right Click</h4>
+        <button mat-button>
+            <mat-icon>home</mat-icon> Home
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav>
+        <a>Home</a>
+    </mat-sidenav>
+</mat-sidenav-container> -->
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+      <app-side-item></app-side-item>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <!-- Contenido principal de tu aplicación -->
+      <button mat-button (click)="sidenav.toggle()">Abrir/Cerrar Sidebar</button>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

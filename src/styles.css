@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+.clr-purple{
+    background-color: #7959A2;
+}
+
+.btn-pink{
+    background-color: #D75A6D;
+    color: #FFF;
+    width: 90px;
+    height: 40px;
+}
+

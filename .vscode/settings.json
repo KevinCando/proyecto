@@ -1,0 +1,6 @@
+{
+    "exportall.config.relExclusion": [
+        "/src/app/modules/home/index.ts",
+        "/src/app/core/header/index.ts"
+    ]
+}
