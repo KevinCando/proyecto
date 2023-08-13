@@ -1,1 +1,26 @@
-<p>area-list works!</p>
+<div class="custom-table-container mat-elevation-z2">
+    <mat-table [dataSource]="areas" [style.background-color]="color">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+        <mat-cell *matCellDef="let area; let rowIndex = index" [ngClass]="getRowClass(rowIndex)"> {{ area.id }} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let area; let rowIndex = index" [ngClass]="getRowClass(rowIndex)"> {{ area.name }} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+        <mat-cell *matCellDef="let area; let rowIndex = index" [ngClass]="getRowClass(rowIndex)">
+          <button mat-icon-button color="primary" (click)="openEditDialog(area)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  

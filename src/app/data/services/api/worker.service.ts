@@ -13,6 +13,14 @@ export class WorkerService {
   constructor( private http: HttpClient) { }
 
   getWorkers(): Observable<Worker[]>{
-    return this.http.get<Worker[]>(this.apiUrl+'/all')
+    return this.http.get<Worker[]>(this.apiUrl+'/all');
+  }
+
+  createWorker(workerData: Worker): Observable<Worker>{
+    return this.http.post<Worker>(this.apiUrl+"/create", workerData);
+  }
+
+  updateWorker(workerData: Worker): Observable<Worker>{
+    return this.http.put<Worker>(this.apiUrl+"/edit", workerData);
   }
 }

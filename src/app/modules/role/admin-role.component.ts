@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { RoleFormComponent } from './components/role-form/role-form.component';
 
 @Component({
   selector: 'app-admin-role',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-role.component.css']
 })
 export class AdminRoleComponent {
+  constructor(private dialog: MatDialog) {}
 
+  openRoleModal(): void {
+    const dialogRef = this.dialog.open(RoleFormComponent, {
+      width: '400px',
+      data: {} // Puedes pasar datos adicionales al modal aquí si es necesario
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Modal cerrado', result);
+    });
+  }
 }

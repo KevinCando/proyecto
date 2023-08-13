@@ -1,1 +1,31 @@
-<p>role-form works!</p>
+<h2 mat-dialog-title class="center title">{{ isEditing ? 'Editar Rol' : 'Agregar Rol' }}</h2>
+<div class="form-container">
+  <div mat-dialog-content class="form-content">
+    <form #roleForm="ngForm" (ngSubmit)="onSave(roleForm.value)">
+      <div class="center">
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Nombre del Rol" name="name" ngModel required>
+        </mat-form-field>
+      </div>
+      <div class="center">
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Descripción del Rol" name="description" ngModel required>
+        </mat-form-field>
+      </div>
+      <div class="center">
+        <mat-form-field appearance="fill">
+          <mat-label>Área</mat-label>
+          <mat-select placeholder="Selecciona un Área" name="areaId" ngModel required>
+            <mat-option *ngFor="let area of areas" [value]="area.id">{{ area.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="actions">
+        <button mat-button class="cancel-button" (click)="onCancel()">Cancelar</button>
+        <button mat-button class="save-button" [disabled]="!roleForm.valid" type="submit">
+          {{ isEditing ? 'Actualizar' : 'Guardar' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

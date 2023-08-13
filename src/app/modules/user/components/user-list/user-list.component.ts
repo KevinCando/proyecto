@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from 'src/app/data/interfaces/user';
 import { UsersService } from 'src/app/data/services/api/users.service';
-import { UserCommunicationService } from 'src/app/data/services/user-comunication.service';
+import { ItemComunicationService } from 'src/app/data/services/item-comunication.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog'; 
 import { UserFormComponent } from '../user-form/user-form.component'; 
@@ -19,12 +19,12 @@ export class UserListComponent {
 
   constructor(private userService: UsersService,
               public dialog: MatDialog,
-              private userCommunicationService: UserCommunicationService
+              private userCommunicationService: ItemComunicationService,
     ){}
 
   ngOnInit(){
     this.loadUsers();
-    this.userCommunicationService.userUpdated$.subscribe(()=>{
+    this.userCommunicationService.itemUpdated$.subscribe(()=>{
       console.log("Entro");
       setTimeout(() => {
         this.loadUsers();

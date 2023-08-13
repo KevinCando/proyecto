@@ -9,7 +9,8 @@ const homeRoutes: Routes = [
     { path:'user', loadChildren: ()=>import('./../user').then(au=>au.AdminUserModule)},
     { path:'area', loadChildren: ()=>import('./../area').then(a=>a.AdminAreaModule)},
     { path:'role', loadChildren: ()=>import('./../role').then(r=>r.AdminRoleModule)},
-    { path:'worker', loadChildren: ()=>import('./../worker').then(w=>w.AdminWorkerModule)}
+    { path:'worker', loadChildren: ()=>import('./../worker').then(w=>w.AdminWorkerModule)},
+    { path:'victim', loadChildren: ()=>import('./../victim').then(v=>v.VictimModule)}
   ]
 }
 ];

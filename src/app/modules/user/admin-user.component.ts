@@ -8,8 +8,9 @@ import { UserFormComponent } from './components/user-form/user-form.component';
   styleUrls: ['./admin-user.component.css']
 })
 export class AdminUserComponent {
-  constructor(private dialog: MatDialog) {}
 
+  constructor(private dialog: MatDialog) {}
+  
   openUserModal(): void {
     const dialogRef = this.dialog.open(UserFormComponent, {
       width: '400px',

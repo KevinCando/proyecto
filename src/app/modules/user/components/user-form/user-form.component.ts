@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 import { Role } from 'src/app/data/interfaces/role';
 import { Worker } from 'src/app/data/interfaces/worker';
 import { User } from 'src/app/data/interfaces/user';
-import { UserCommunicationService } from 'src/app/data/services/user-comunication.service';
+import { ItemComunicationService } from 'src/app/data/services/item-comunication.service';
 
 @Component({
   selector: 'app-user-form',
@@ -17,7 +17,7 @@ import { UserCommunicationService } from 'src/app/data/services/user-comunicatio
 })
 export class UserFormComponent implements AfterViewInit {
 
-  @ViewChild('userForm') userForm!: NgForm;
+  @ViewChild('userForm') userForm!: NgForm; 
   roles: Role[] = [];
   workers: Worker[] = [];
   isEditing: boolean = false;
@@ -30,7 +30,7 @@ export class UserFormComponent implements AfterViewInit {
     private workerService: WorkerService,
     private userService: UsersService,
     private changeDetector: ChangeDetectorRef,
-    private userCommunicationService: UserCommunicationService
+    private userCommunicationService: ItemComunicationService
   ) {}
 
   ngAfterViewInit() {
@@ -56,7 +56,7 @@ export class UserFormComponent implements AfterViewInit {
         console.log('Usuario creado', response);
       });
     }
-    this.userCommunicationService.triggerUserUpdated();
+    this.userCommunicationService.triggerItemUpdated();
     this.dialogRef.close();
   }
 

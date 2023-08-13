@@ -1,4 +1,7 @@
 <mat-nav-list *ngIf="rolId == 1">
+  <a mat-list-item>
+    <span matListItemTitle class="custom-text-color" (click)="navigateTo('home/victim')">Victima</span>
+  </a>
   <a mat-list-item [matMenuTriggerFor]="menu">
     <span matListItemTitle class="custom-text-color">{{this.area.name}}</span>
   </a>

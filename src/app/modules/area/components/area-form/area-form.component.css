@@ -1,0 +1,43 @@
+.center {
+    text-align: center;
+}
+
+.form-content {
+    background-color: #DFCFE6;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cancel-button {
+    color: #D75A6D;
+}
+
+.save-button {
+    background-color: #D75A6D;
+    color: white;
+}
+
+.title {
+    background-color: #7959A2;
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.form-container {
+    background-color: #7959A2;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.form-content {
+    background-color: #DFCFE6;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+}

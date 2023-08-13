@@ -1,0 +1,11 @@
+.custom-table-container {
+    margin:10px 400px;
+}
+
+.odd-row {
+    background-color: #7959A2; /* Cambia el color a tu elección */
+}
+
+.even-row {
+    background-color: #BDA8C9; /* Cambia el color a tu elección para filas pares */
+}

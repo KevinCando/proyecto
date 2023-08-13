@@ -1,1 +1,39 @@
-<p>worker-list works!</p>
+<div class="custom-table-container mat-elevation-z2">
+    <mat-table [dataSource]="workers" [style.background-color]="color">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+        <mat-cell *matCellDef="let worker; let rowIndex = index" [ngClass]="getRowClass(rowIndex)">
+          {{ worker.id }}
+        </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="names">
+        <mat-header-cell *matHeaderCellDef> Names </mat-header-cell>
+        <mat-cell *matCellDef="let worker; let rowIndex = index" [ngClass]="getRowClass(rowIndex)">
+          {{ worker.names }}
+        </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="surnames">
+        <mat-header-cell *matHeaderCellDef> Surnames </mat-header-cell>
+        <mat-cell *matCellDef="let worker; let rowIndex = index" [ngClass]="getRowClass(rowIndex)">
+          {{ worker.surnames }}
+        </mat-cell>
+      </ng-container>
+  
+      <!-- Columna de acciones -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+        <mat-cell *matCellDef="let worker; let rowIndex = index" [ngClass]="getRowClass(rowIndex)">
+          <button mat-icon-button color="primary" (click)="openEditDialog(worker)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+  
+      <!-- Agregar la columna de acciones en mat-header-row y mat-row -->
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  

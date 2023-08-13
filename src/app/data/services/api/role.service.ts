@@ -15,4 +15,12 @@ export class RoleService {
   getRoles():Observable<Role[]>{
     return this.http.get<Role[]>(this.apiUrl+'/all')
   }
+
+  creareRole(roleData : Role):Observable<Role>{
+    return this.http.post<Role>(this.apiUrl+'/create',roleData);
+  }
+
+  updateRole(roleData : Role):Observable<Role>{
+    return this.http.put<Role>(this.apiUrl+'/edit',roleData);
+  }
 }

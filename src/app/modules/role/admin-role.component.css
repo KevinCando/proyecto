@@ -1,0 +1,24 @@
+/* Cambiar el color de fondo y el color del texto del botón */
+.custom-button {
+    background-color: #D75A6D; /* Cambia el color de fondo */
+    color: white; /* Cambia el color del texto a blanco */
+    border-radius: 8px; /* Agrega esquinas redondeadas */
+    font-weight: bold; /* Hace el texto más audaz */
+    padding: 10px 20px; /* Añade un poco de espacio interno al botón */
+    transition: background-color 0.3s, color 0.3s; /* Agrega una transición suave en los cambios de color */
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Cambiar el color de fondo del botón en el hover */
+  .custom-button:hover {
+    background-color: #FF7290; /* Cambia el color de fondo en el hover */
+  }
+  
+  /* Cambiar el color de fondo del botón cuando está deshabilitado */
+  .custom-button:disabled {
+    background-color: #ccc; /* Cambia el color de fondo a gris */
+    color: #666; /* Cambia el color del texto a un gris más oscuro */
+    cursor: not-allowed; /* Cambia el cursor a un círculo con una barra diagonal */
+  }
+  

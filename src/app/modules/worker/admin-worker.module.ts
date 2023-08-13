@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AdminWorkerComponent } from './admin-worker.component';
 import { AdminWorkerRoutingModule } from './admin-worker-routing.module';
 import { SidebarModule } from 'src/app/core/sidebar/sidebar.module';
+import { WorkerFormModule } from './components/worker-form/worker-form.module';
+import { WorkerListModule } from './components/worker-list/worker-list.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +13,9 @@ import { SidebarModule } from 'src/app/core/sidebar/sidebar.module';
   imports: [
     CommonModule,
     AdminWorkerRoutingModule,
-    SidebarModule
+    SidebarModule,
+    WorkerFormModule,
+    WorkerListModule
   ]
 })
 export class AdminWorkerModule { }
