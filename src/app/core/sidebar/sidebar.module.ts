@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SidebarComponent } from './sidebar.component';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
-import { SideItemModule } from './components/side-item/side-item.module';
+import { MatIconModule } from '@angular/material/icon';
 
+import { SidebarComponent } from './sidebar.component';
+import { SideItemModule } from './components/side-item/side-item.module';
+import { HeaderModule } from './../header/header.module'
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,12 @@ import { SideItemModule } from './components/side-item/side-item.module';
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
-    SideItemModule
+    SideItemModule,
+    HeaderModule,
+    MatIconModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule
   ],
   exports: [
     SidebarComponent

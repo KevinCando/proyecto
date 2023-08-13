@@ -1,0 +1,32 @@
+<div class="custom-table-container mat-elevation-z2">
+  <mat-table [dataSource]="users" [style.background-color]="color" >
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let user; let rowIndex = index"   [ngClass]="getRowClass(rowIndex)"> {{ user.id }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let user; let rowIndex = index" [ngClass]="getRowClass(rowIndex)"> {{ user.name }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="pass">
+      <mat-header-cell *matHeaderCellDef> Password </mat-header-cell>
+      <mat-cell *matCellDef="let user; let rowIndex = index" [ngClass]="getRowClass(rowIndex)"> {{ user.pass }} </mat-cell>
+    </ng-container>
+
+    <!-- Columna de acciones -->
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+      <mat-cell *matCellDef="let user; let rowIndex = index" [ngClass]="getRowClass(rowIndex)">
+        <button mat-icon-button color="primary" (click)="openEditDialog(user)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Agregar la columna de acciones en mat-header-row y mat-row -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

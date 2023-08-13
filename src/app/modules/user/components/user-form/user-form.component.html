@@ -1,0 +1,41 @@
+<h2 mat-dialog-title class="center title">{{ isEditing ? 'Editar Usuario' : 'Agregar Usuario' }}</h2>
+<div class="form-container">
+  <div mat-dialog-content class="form-content">
+    <form #userForm="ngForm" (ngSubmit)="onSave(userForm.value)">
+      <div class="center">
+        <mat-form-field appearance="fill">
+          <mat-label>Rol</mat-label>
+          <mat-select placeholder="Selecciona un Rol" name="roleId" ngModel required>
+            <mat-option *ngFor="let role of roles" [value]="role.id">{{ role.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="center">
+        <mat-form-field appearance="fill">
+          <mat-label>Trabajador</mat-label>
+          <mat-select placeholder="Selecciona un trabajador" name="workId" ngModel required>
+            <mat-option *ngFor="let worker of workers" [value]="worker.id">{{worker.names +' '+ worker.surnames}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="center">
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Usuario" name="name" ngModel required>
+        </mat-form-field>
+      </div>
+      <div class="center">
+        <mat-form-field appearance="fill">
+          <input matInput type="password" placeholder="Contraseña" name="pass" ngModel required>
+        </mat-form-field>
+      </div>
+  
+      
+      <div class="actions">
+        <button mat-button class="cancel-button" (click)="onCancel()">Cancelar</button>
+        <button mat-button class="save-button" [disabled]="!userForm.valid" type="submit">
+          {{ isEditing ? 'Actualizar' : 'Guardar' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

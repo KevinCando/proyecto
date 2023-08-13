@@ -11,3 +11,29 @@
     height: 40px;
 }
 
+/*Nuevos*/
+.custom-toolbar{
+    background-color: #7959A2;
+    margin-left: 0;
+    padding-left: 0;
+    min-height: 100px;
+}
+
+mat-sidenav-container{
+    height: calc(205vh - 115vh);
+    background-color: #FFF !important;
+}
+
+mat-sidenav{
+    width: 200px;
+    background-color: cornflowerblue;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row{
+    padding: 0 !important;
+}
+
+mat-toolbar-row{
+    padding: 0 !important;
+    width: 100% !important;
+}

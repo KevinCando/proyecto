@@ -2,12 +2,20 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
 
-const routes: Routes = [
-  {path : '', component: HomeComponent}
+const homeRoutes: Routes = [
+  {path : '', 
+  component: HomeComponent,
+  children:[
+    { path:'user', loadChildren: ()=>import('./../user').then(au=>au.AdminUserModule)},
+    { path:'area', loadChildren: ()=>import('./../area').then(a=>a.AdminAreaModule)},
+    { path:'role', loadChildren: ()=>import('./../role').then(r=>r.AdminRoleModule)},
+    { path:'worker', loadChildren: ()=>import('./../worker').then(w=>w.AdminWorkerModule)}
+  ]
+}
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(homeRoutes)],
   exports: [RouterModule]
 })
 export class HomeRoutingModule { }

@@ -48,12 +48,40 @@
         <a>Home</a>
     </mat-sidenav>
 </mat-sidenav-container> -->
+<!-- <app-header></app-header> -->
+
+<mat-toolbar class="custom-toolbar">
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+                <button mat-icon-button (click)="sidenav.toggle()">
+                  <mat-icon aria-hidden="false"> menu</mat-icon>
+                </button>
+            </div>
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start col-11">
+              <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img src="../../../assets/images/logo.png" alt="" class="img-fluid" width="40" height="32">
+              </a>
+              <div class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <!-- Agrega elementos de navegación aquí si es necesario -->
+              </div>
+              <div class="text-end align-middle">
+                <p>Usuario: {{userName}}</p>
+              </div>
+              <div class="text-end">
+                <button mat-button class="custom-button" (click)="logout()">Salir
+                    <mat-icon aria-hidden="false">logout</mat-icon>
+                </button>
+              </div>
+            </div>
+        </div>
+    </div>
+</mat-toolbar>
 <mat-sidenav-container>
-    <mat-sidenav #sidenav>
-      <app-side-item></app-side-item>
+    <mat-sidenav #sidenav class="custom-sidebar">
+      <app-side-item [areaId]="userArea" [rolId]="userRol"></app-side-item>
     </mat-sidenav>
     <mat-sidenav-content>
-      <!-- Contenido principal de tu aplicación -->
-      <button mat-button (click)="sidenav.toggle()">Abrir/Cerrar Sidebar</button>
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
-  </mat-sidenav-container>
+</mat-sidenav-container>

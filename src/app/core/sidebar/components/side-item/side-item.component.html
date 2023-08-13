@@ -1,10 +1,22 @@
-<mat-nav-list>
-    <button mat-button [matMenuTriggerFor]="menu">
-      Opción N1
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>Acción 1</button>
-      <button mat-menu-item>Acción 2</button>
-    </mat-menu>
+<mat-nav-list *ngIf="rolId == 1">
+  <a mat-list-item [matMenuTriggerFor]="menu">
+    <span matListItemTitle class="custom-text-color">{{this.area.name}}</span>
+  </a>
+  <mat-menu #menu="matMenu" class="custom-menu">
+    <button mat-menu-item *ngFor="let form of forms">{{form.name}}</button>
+  </mat-menu>
 </mat-nav-list>
-  
+<mat-nav-list *ngIf="rolId == 2">
+  <a mat-list-item>
+    <span matListItemTitle class="custom-text-color" (click)="navigateTo('home/user')">Usuarios</span>
+  </a>
+  <a mat-list-item>
+    <span matListItemTitle class="custom-text-color" (click)="navigateTo('home/worker')">Profesionales</span>
+  </a>
+  <a mat-list-item>
+    <span matListItemTitle class="custom-text-color" (click)="navigateTo('home/role')">Roles</span>
+  </a>
+  <a mat-list-item>
+    <span matListItemTitle class="custom-text-color" (click)="navigateTo('home/area')">Areas</span>
+  </a>
+</mat-nav-list>
